@@ -1,7 +1,12 @@
 FROM rasa/rasa:latest
+
 USER root
-WORKDIR /app
-COPY . /app
+WORKDIR /chatbot
+COPY . /chatbot
+
 RUN rasa train
+
 USER 1001
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "$PORT", "--endpoints", "endpoints.yml"]
+
+ENTRYPOINT ["rasa"]
+CMD ["run", "--enable-api", "--cors", "*", "--port", "$PORT", "--endpoints", "endpoints.yml"]
