@@ -1,12 +1,12 @@
 FROM rasa/rasa-sdk:latest
 
 USER root
-WORKDIR /app
-COPY actions /app/actions
+WORKDIR /chatbot
+COPY actions /chatbot/actions/actions
 COPY requirements-actions.txt /app
 RUN pip install -r requirements-actions.txt
 
 USER 1001
 
 ENTRYPOINT ["rasa"]
-CMD ["run", "actions", "--port", "${PORT_ACTIONS:-5055}"]
+CMD ["run", "actions", "--port", 5055]
