@@ -6,13 +6,19 @@ services:
     plan: free
     healthCheckPath: /
     envVars:
-      - key: PORT_RASA
+      - key: PORT
         value: 5005
-      - key: ACTION_ENDPOINT_URL
+      - key: ACTION_ENDPOINT_HOST
         fromService:
           name: rasa-actions
           type: web
-          property: url
+          property: host
+      - key: ACTION_ENDPOINT_PORT
+        fromService:
+          name: rasa-actions
+          type: web
+          property: port
+
   - type: web
     name: rasa-actions
     env: docker
@@ -20,5 +26,5 @@ services:
     plan: free
     healthCheckPath: /health
     envVars:
-      - key: PORT_ACTIONS
+      - key: PORT
         value: 5055
