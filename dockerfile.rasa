@@ -11,5 +11,6 @@ ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
 
 USER 1001
 
-# Use shell form of CMD to allow variable expansion
-CMD rasa run --enable-api --cors "*" --port ${PORT_RASA:-5005} --endpoints endpoints.yml
+# Use ENTRYPOINT with CMD
+ENTRYPOINT ["rasa"]
+CMD ["run", "--enable-api", "--cors", "*", "--port", "${PORT_RASA:-5005}", "--endpoints", "endpoints.yml"]
