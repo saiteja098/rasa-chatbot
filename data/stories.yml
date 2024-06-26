@@ -1,0 +1,35 @@
+version: "3.1"
+
+stories:
+  - story: lead
+    steps:
+      - intent: property_type
+      - action: action_show_floor_plans
+      - intent: show_budgets_available_for_given_floor_plan
+      - action: utter_lead_form
+      - action: action_show_budget
+      - intent: show_areas_available_for_budget
+      - action: action_show_area
+      - intent: show_properties_available_for_area
+      - action: action_show_properties
+
+  - story: happy path
+    steps:
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye

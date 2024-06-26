@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rasa-chatbot
+    env: docker
+    dockerfilePath: ./Dockerfile.rasa
+    plan: free
+    healthCheckPath: /
+  - type: web
+    name: rasa-actions
+    env: docker
+    dockerfilePath: ./Dockerfile.customActions
+    plan: free
+    healthCheckPath: /health

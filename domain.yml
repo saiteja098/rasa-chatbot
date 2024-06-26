@@ -1,0 +1,86 @@
+version: "3.1"
+
+intents:
+  - lead_capture
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - property_type
+  - show_properties_available_for_area
+  - show_areas_available_for_budget
+  - show_budgets_available_for_given_floor_plan
+  - greet
+
+entities:
+  - property_type
+  - project_name
+  - property_area
+  - budget_range
+  - floor_plan
+
+slots:
+  floor_plan:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: floor_plan
+  property_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: property_type
+  budget_range:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: budget_range
+  property_area:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: property_area
+  project_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: project_name
+
+responses:
+  utter_greet:
+    - text: "Good morning. Greetings from Sriven Groups help desk."
+  utter_introduction_two:
+    - text: "Unlock Your Dream Home 🌟 Explore Endless Possibilities with Sriven Groups. Welcome to a World of Exceptional Properties and Personalized Service."
+  utter_introduction_three:
+    - text: "What are you looking for?"
+  utter_lead_form:
+    - text: "lead form requested"
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+    - text: "Did that help you?"
+  utter_happy:
+    - text: "Great, carry on!"
+  utter_goodbye:
+    - text: "Bye"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_submit_lead_form
+  - action_show_properties
+  - action_show_floor_plans
+  - action_show_budget
+  - action_show_area
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

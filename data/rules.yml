@@ -1,0 +1,47 @@
+version: "3.1"
+
+rules:
+  - rule: say goodmorning when user says good morning
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: utter_introduction_two
+      - action: utter_introduction_three
+
+  - rule: show floor plans when user gives property type
+    steps:
+      - intent: property_type
+      - action: action_show_floor_plans
+
+  - rule: activate form when user gives floor plan
+    steps:
+      - intent: show_budgets_available_for_given_floor_plan
+      - action: utter_lead_form
+      - action: action_show_budget
+
+  - rule: take lead details when user asked for lead_capture
+    steps:
+      - intent: lead_capture
+      - action: utter_lead_form
+
+  - rule: show areas when user enters gives budget range
+    steps:
+      - intent: show_areas_available_for_budget
+      - action: action_show_area
+
+  - rule: show properties when user gives area
+    steps:
+      - intent: show_properties_available_for_area
+      - action: action_show_properties
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+

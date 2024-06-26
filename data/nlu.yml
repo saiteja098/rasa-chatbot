@@ -1,0 +1,156 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: show_areas_available_for_budget
+  examples: |
+    - looking for apartments in [40 - 60 lakhs](budget_range)
+    - above [60 lakhs](budget_range)
+    - below [1 Crore](budget_range)
+    - above [80 lakhs](budget_range) and below [1.5 cr] (budget_range)
+    - my budget is [2 Crore](budget_range)
+    - [60 - 80 lakhs](budget_range)
+    - [2.5 Cr](budget_range)
+    - [40 lakhs](budget_range)
+    - [80 - 1 Cr](budget_range)
+    - [1 - 1.5 Cr](budget_range)
+    - [1.5 - 2 Cr](budget_range)
+    - [2 - 2.5 Cr](budget_range)
+
+- intent: show_properties_available_for_area
+  examples: |
+    - I'm looking for [Whitefield](property_area)
+    - I'm looking for properties in [Brindavan Nagar](property_area) 
+    - I'm looking for properties available in [KR Puram](property_area)
+    - are there any properties available in [Electronic City] region(property_area) 
+    - any properties available near [Akshaya Nagar] location (property_area)
+    - i want properties around [Varthur Hobli](property_area)
+    - [Nagarbhavi](property_area)
+    - [JP Nagar](property_area)
+    - [RR Nagar](property_area)
+    - [Uttarahalli](property_area)
+    - [Begur Road](property_area)
+    - [Sarjapur](property_area)
+    - [Kengeri](property_area)
+
+- intent: property_type
+  examples: |
+    - I'm looking for an [apartment](property_type)
+    - I want a [villa](property_type)
+    - Show me [villament](property_type)
+    - Do you have [plot](property_type)?
+    - I need an [individual house](property_type)
+
+- intent: show_budgets_available_for_given_floor_plan
+  examples: |
+    - I'm looking for an [2BHK](floor_plan)
+    - I want a [3BHK](floor_plan)
+    - Show me [2.5BHK](floor_plan) 
+    - Do you have [4BHK](floor_plan)
+    - I need an [4.5BHK](floor_plan)
+    - looking to buy [5BHK](floor_plan)
+    - [2BHK](floor_plan)
+    - [3BHK](floor_plan)
+    - [2.5BHK](floor_plan)
+    - [4BHK](floor_plan)
+    - [4.5BHK](floor_plan)
+    - [5BHK](floor_plan)
+
+- intent: lead_capture
+  examples: |
+    - activate form
+    - form
+    - i want to submit form
+    - call me
+    - i want to contact regarding this project
+    - i'm looking to buy this project
+    - i want to know more
+    - contact me

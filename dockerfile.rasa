@@ -1,0 +1,7 @@
+FROM rasa/rasa:latest
+USER root
+WORKDIR /app
+COPY . /app
+RUN rasa train
+USER 1001
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "$PORT", "--endpoints", "endpoints.yml"]
