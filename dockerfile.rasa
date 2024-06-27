@@ -11,5 +11,8 @@ ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
 
 USER 1001
 
+# Expose the port
+EXPOSE 5005
+
 # Use ENTRYPOINT with CMD
 CMD rasa run --enable-api --cors * --port 5005 --endpoints endpoints.yml

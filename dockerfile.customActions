@@ -1,4 +1,5 @@
-FROM rasa/rasa-sdk:3.6.0
+FROM rasa/rasa:latest
+FROM rasa/rasa-sdk:latest
 
 # Change to root user to install dependencies
 USER root
@@ -17,6 +18,9 @@ RUN pip install -r requirements-actions.txt
 
 # Change back to the non-root user for security
 USER 1001
+
+# Expose the port
+EXPOSE 5055
 
 # Command to run the action server
 CMD rasa run actions --port 5055 --actions actions
