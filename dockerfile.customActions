@@ -1,4 +1,4 @@
-FROM rasa/rasa-sdk:3.6
+FROM rasa/rasa-sdk:latest
 
 USER root
 WORKDIR /chatbot
