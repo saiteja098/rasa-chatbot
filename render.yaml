@@ -1,3 +1,4 @@
+
 services:
   - type: web
     name: rasa-chatbot
@@ -24,7 +25,7 @@ services:
     env: docker
     dockerfilePath: ./dockerfile.customActions
     plan: free
-    healthCheckPath: /health
+    healthCheckPath: /
     envVars:
       - key: PORT
         value: 5055

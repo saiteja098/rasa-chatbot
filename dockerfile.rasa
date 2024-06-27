@@ -4,7 +4,7 @@ USER root
 WORKDIR /chatbot
 COPY . /chatbot
 
-RUN rasa train
+
 
 # Set environment variable to suppress SQLAlchemy warning
 ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
@@ -13,4 +13,4 @@ USER 1001
 
 # Use ENTRYPOINT with CMD
 ENTRYPOINT ["rasa"]
-CMD ["run", "--enable-api", "--cors", "*", "--port", "${PORT}", "--endpoints", "endpoints.yml"]
+CMD ["run", "--enable-api", "--cors", "*", "--port", "5005", "--endpoints", "endpoints.yml"]

@@ -3,10 +3,8 @@ FROM rasa/rasa-sdk:latest
 USER root
 WORKDIR /app
 COPY actions /app/actions
-COPY requirements-actions.txt /app/requirements-actions.txt
-RUN pip install -r requirements-actions.txt
 
 USER 1001
 
 ENTRYPOINT ["rasa"]
-CMD ["run", "actions", "--port", "${PORT}"]
+CMD ["run", "actions", "--port", "5055"]
