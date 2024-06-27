@@ -1,10 +1,22 @@
-FROM rasa/rasa-sdk:latest
+FROM rasa/rasa-sdk:3.6.0
 
+# Change to root user to install dependencies
 USER root
-WORKDIR /chatbot
-COPY . /chatbot
 
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the actions folder into the container
+COPY ./actions /app/actions
+
+# Copy the requirements file
+COPY requirements-actions.txt /app/requirements-actions.txt
+
+# Install any additional dependencies
+RUN pip install -r requirements-actions.txt
+
+# Change back to the non-root user for security
 USER 1001
 
-ENTRYPOINT ["rasa"]
-CMD ["run", "actions", "--port", "5055"]
+# Command to run the action server
+CMD ["rasa", "run", "actions", "--port", "5055", "--actions", "actions"]
