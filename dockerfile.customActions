@@ -19,4 +19,4 @@ RUN pip install -r requirements-actions.txt
 USER 1001
 
 # Command to run the action server
-CMD ["rasa", "run", "actions", "--port", "5055", "--actions", "actions"]
+CMD rasa run actions --port 5055 --actions actions

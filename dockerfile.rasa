@@ -12,4 +12,4 @@ ENV SQLALCHEMY_SILENCE_UBER_WARNING=1
 USER 1001
 
 # Use ENTRYPOINT with CMD
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005", "--endpoints", "endpoints.yml"]
+CMD rasa run --enable-api --cors * --port 5005 --endpoints endpoints.yml
