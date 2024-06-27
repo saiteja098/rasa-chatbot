@@ -13,4 +13,4 @@ USER 1001
 
 # Use ENTRYPOINT with CMD
 ENTRYPOINT ["rasa"]
-CMD ["run", "--enable-api", "--cors", "*", "--port", "5005", "--endpoints", "endpoints.yml"]
+CMD ["run", "--enable-api", "--cors", "*", "--port", "${PORT}", "--endpoints", "endpoints.yml"]
